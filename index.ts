@@ -30,8 +30,9 @@ type Query {
 const resolvers = {
     Query: {
         message: (input: String) => {
-            const numberOfMeows = randomIntFromInterval(1, 10)
-            let arr = new Array<String>(numberOfMeows).fill("Meow")
+            const numberOfMeows = randomIntFromInterval(1, 8)
+            let arr = new Array<String>(numberOfMeows).fill("meow", 1)
+            arr[0] = "Meow"
             return {
                 id: uuidv4(),
                 body: arr.join(" ")
